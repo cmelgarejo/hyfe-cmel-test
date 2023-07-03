@@ -15,10 +15,10 @@ export async function fetchCoughData(fnSetCoughPercentage: Function) {
   const oneWeekAgo = format(startOfDay(subDays(new Date(), 7)), "yyyy-MM-dd");
   const weeklyCoughs = await EventsService.getEvents("day", oneWeekAgo);
   const dailyCoughs = await EventsService.getEvents("hour", last24h);
-  // console.log("last24h:", last24h);
-  // console.log("oneWeekAgo:", oneWeekAgo);
-  // console.log("weeklyCoughs:", weeklyCoughs);
-  // console.log("dailyCoughs:", dailyCoughs);
+  console.log("last24h:", last24h);
+  console.log("oneWeekAgo:", oneWeekAgo);
+  console.log("weeklyCoughs:", weeklyCoughs);
+  console.log("dailyCoughs:", dailyCoughs);
   if (dailyCoughs.length === 0) {
     console.warn("not enough 24h data");
     fnSetCoughPercentage(0);
