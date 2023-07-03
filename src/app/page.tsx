@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import CoughDynamic from "@/components/CoughDynamic";
 
 export default function Home() {
-  const [coughPercentage, setCoughPercentage] = useState();
+  const [coughPercentage, setCoughPercentage] = useState<number | undefined>(undefined);
 
   // To initialize the cough chart
   useEffect(() => {
@@ -25,11 +25,11 @@ export default function Home() {
       <button
         className="absolute bottom-0 right-0 rounded-[50px] text-blue-500 font-bold py-2 px-4 border border-blue-500 hover:border-transparent hover:bg-blue-500 hover:text-white"
         onClick={() => {
-          //set a random value between -100 and 100
+          //set a random value between -100 and 100 to test the graph, service is a litle optimistic, I think.
           setCoughPercentage(Math.floor(Math.random() * 200) - 100);
         }}
       >
-        🎲Random value
+        🎲 Random value
       </button>
     </main>
   );

@@ -42,3 +42,7 @@ body {
 .recharts-cartesian-grid-horizontal line:nth-child(2) {
   transform: translate(0, 28px);
 }
+
+.recharts-layer.recharts-customized-wrapper {
+  transform: translate(50%, 50%);
+}

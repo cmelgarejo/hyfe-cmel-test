@@ -7,14 +7,14 @@ import {
   ResponsiveContainer,
   YAxis,
   ReferenceDot,
-  // Customized,
-  // Polygon,
+  Customized,
+  Polygon,
 } from "recharts";
 
 export default function SeesawChart({ value, highlightColor }: { value: number | undefined; highlightColor: string }) {
   const p1 = { x: -30, y: 0 };
   const p2 = { x: 30, y: 0 };
-  const center = { x: 0, y: 0 };
+  const wedge = [{ x: 5, y: 28 },{ x: 0, y: 0 },{ x: -5, y: 28 }];
 
   if (value !== undefined) {
     if (value >= 100) {
@@ -35,7 +35,7 @@ export default function SeesawChart({ value, highlightColor }: { value: number |
     }
   }
 
-  const data = [p1, center, p2];
+  const data = [p1, { x: 0, y: 0 }, p2];
 
   return (
     <ResponsiveContainer width="100%" height={66}>
@@ -56,11 +56,10 @@ export default function SeesawChart({ value, highlightColor }: { value: number |
           strokeWidth={8}
           strokeOpacity={0.8}
           dot={false}
+          width={50}
         />
+        <Customized component={<Polygon points={wedge} fill="#D7DBE0" strokeWidth={0} />} />
         <ReferenceDot fill="white" stroke="black" x={1} y={0} r={4} />
-        {/* <Customized>
-          <Polygon points={[p1, center, p2]} fill="white" stroke="black" strokeWidth={1} />
-        </Customized> */}
       </LineChart>
     </ResponsiveContainer>
   );
