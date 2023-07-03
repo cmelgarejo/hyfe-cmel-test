@@ -15,7 +15,6 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen">
       <Header />
-      <div div></div>
       <CoughDynamic value={coughPercentage} />
       <button
         className="rounded-[50px] text-blue-500 font-bold py-2 px-4 border border-blue-500 hover:border-transparent hover:bg-blue-500 hover:text-white"

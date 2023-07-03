@@ -39,17 +39,23 @@ export default function SeesawChart({ value, highlightColor }) {
     <ResponsiveContainer width="100%" height={66}>
       <LineChart data={data}>
         <YAxis domain={[-50, 50]} hide />
-        <CartesianGrid strokeDasharray={15} horizontal={true} vertical={false} strokeOpacity={0} color="#F7F7F9" />
+        <CartesianGrid
+          strokeDasharray={8}
+          horizontal={true}
+          vertical={false}
+          strokeOpacity={1}
+          fill="var(--chart-bg)"
+        />
         <Line
           type="monotone"
           dataKey="y"
           strokeLinecap="round"
           stroke={highlightColor}
-          strokeWidth={10}
+          strokeWidth={8}
           strokeOpacity={0.8}
           dot={false}
         />
-        <ReferenceDot fill="white" stroke="black" x={1} y={0} r={10} />
+        <ReferenceDot fill="white" stroke="black" x={1} y={0} r={4} />
         {/* <Customized>
           <Polygon points={[p1, center, p2]} fill="white" stroke="black" strokeWidth={1} />
         </Customized> */}

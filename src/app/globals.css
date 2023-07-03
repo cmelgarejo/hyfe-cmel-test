@@ -16,7 +16,7 @@
   --chart-about-the-same: #A1AFC6;
   --chart-somewhat-better: #91CDEF;
   --chart-much-better: #9FEAB8;
-  --chart-bg: #F7F7F9;
+  --chart-bg: #F7F7F9CC;
   --motivational-text-bg: #F1F1F3;
   --bg-nav-header: #243966;
 }
@@ -34,6 +34,11 @@ body {
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
-.recharts-wrapper .recharts-cartesian-grid-horizontal line:nth-child(3) {
-  stroke-opacity: 1;
+.recharts-wrapper .recharts-cartesian-grid-horizontal line:first-child,
+.recharts-wrapper .recharts-cartesian-grid-horizontal line:last-child {
+  stroke-opacity: 0;
+}
+
+.recharts-cartesian-grid-horizontal line:nth-child(2) {
+  transform: translate(0, 28px);
 }

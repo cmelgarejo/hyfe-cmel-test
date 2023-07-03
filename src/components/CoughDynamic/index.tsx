@@ -1,5 +1,5 @@
 import SeesawChart from "@/components/SeesawChart";
-import { getMotivationalMessage, getHighlightColor } from "@/lib/util";
+import MotivationalMessage from "../MotivationalMessage";
 
 export default function CoughDynamic({ value }) {
   return (
@@ -7,10 +7,8 @@ export default function CoughDynamic({ value }) {
       <div className="flex flex-row justify-between rounded-lg shadow-lg bg-white">
         <div className="p-4">
           <h1 className="pb-1 text-lg font-bold leading-6 text-zinc-800">Cough Dynamic</h1>
-          <div className="text-xs text-slate-500">Last 24h comparing to the previous week</div>
-          <span className="pt-1 pb-1 pl-3 pr-3 mt-3 text-xs text-zinc-700 bg-[var(--motivational-text-bg)] rounded-full">
-            {getMotivationalMessage(value)}
-          </span>
+          <div className="text-xs text-slate-500/90">Last 24h comparing to the previous week</div>
+          <MotivationalMessage value={value} />
         </div>
         <div className="w-1/2">
           <p
@@ -26,4 +24,18 @@ export default function CoughDynamic({ value }) {
       </div>
     </div>
   );
+}
+
+export function getHighlightColor(type: "text" | "chart", value: number): string {
+  if (value >= 50) {
+    return `--${type}-getting-worse`;
+  } else if (value >= 10) {
+    return `--${type}-somewhat-worse`;
+  } else if (value >= -10) {
+    return `--${type}-about-the-same`;
+  } else if (value >= -50) {
+    return `--${type}-somewhat-better`;
+  } else {
+    return `--${type}-much-better`;
+  }
 }

@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <nav className="text-gray-200 bg-[var(--bg-nav-header)] w-full">
-      <div className="bg-blue-500 bg-opacity-20 h-24 grid grid-flow-col grid-cols-3 justify-between items-center">
+      <div className="h-20 grid grid-flow-col grid-cols-3 justify-between items-center mt-8">
         <button
           className="border-0 bg-transparent px-4 leading-none transition-shadow duration-150 ease-in-out
         hover:text-neutral-700 focus:text-neutral-700 dark:hover:text-white dark:focus:text-white"

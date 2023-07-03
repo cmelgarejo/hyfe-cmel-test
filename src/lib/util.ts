@@ -35,31 +35,3 @@ export async function fetchCoughData(fnSetCoughPercentage: Function) {
   // console.log("cough % normalzied:", normalized);
   fnSetCoughPercentage(normalized);
 }
-
-export function getHighlightColor(type: "text" | "chart", value: number) {
-  if (value >= 50) {
-    return `--${type}-getting-worse`;
-  } else if (value >= 10) {
-    return `--${type}-somewhat-worse`;
-  } else if (value >= -10) {
-    return `--${type}-about-the-same`;
-  } else if (value >= -50) {
-    return `--${type}-somewhat-better`;
-  } else {
-    return `--${type}-much-better`;
-  }
-}
-
-export function getMotivationalMessage(value: number) {
-  if (value >= 50) {
-    return "😔\tIt’s getting worse";
-  } else if (value >= 10) {
-    return "😔 Somewhat worse";
-  } else if (value >= -10) {
-    return "😐 About the same";
-  } else if (value >= -50) {
-    return "🙂 Somewhat better";
-  } else {
-    return "😃\tMuch better";
-  }
-}
