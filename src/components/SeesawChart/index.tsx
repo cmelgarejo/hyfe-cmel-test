@@ -11,26 +11,28 @@ import {
   // Polygon,
 } from "recharts";
 
-export default function SeesawChart({ value, highlightColor }) {
+export default function SeesawChart({ value, highlightColor }: { value: number | undefined; highlightColor: string }) {
   const p1 = { x: -30, y: 0 };
   const p2 = { x: 30, y: 0 };
   const center = { x: 0, y: 0 };
 
-  if (value >= 100) {
-    p1.y = -30;
-    p2.y = 30;
-  } else if (value >= 50) {
-    p1.y = -15;
-    p2.y = 15;
-  } else if (value >= 0) {
-    p1.y = 0;
-    p2.y = 0;
-  } else if (value >= -50) {
-    p1.y = 15;
-    p2.y = -15;
-  } else if (value >= -100) {
-    p1.y = 30;
-    p2.y = -30;
+  if (value !== undefined) {
+    if (value >= 100) {
+      p1.y = -30;
+      p2.y = 30;
+    } else if (value >= 50) {
+      p1.y = -15;
+      p2.y = 15;
+    } else if (value >= 0) {
+      p1.y = 0;
+      p2.y = 0;
+    } else if (value >= -50) {
+      p1.y = 15;
+      p2.y = -15;
+    } else if (value >= -100) {
+      p1.y = 30;
+      p2.y = -30;
+    }
   }
 
   const data = [p1, center, p2];

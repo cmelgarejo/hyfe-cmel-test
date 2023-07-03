@@ -1,6 +1,5 @@
-export default function MotivationalMessage({ value }) {
+export default function MotivationalMessage({ value }: { value: number | undefined }) {
   const { emoji, message } = getMotivationalMessage(value);
-
   return (
     <div className="pt-1 pb-1 pl-3 pr-3 mt-2 text-xs text-zinc-700 bg-[var(--motivational-text-bg)] rounded-full max-w-fit">
       <span className="mr-2">{emoji}</span>
@@ -9,7 +8,8 @@ export default function MotivationalMessage({ value }) {
   );
 }
 
-export function getMotivationalMessage(value: number): MotivationalMessage {
+export function getMotivationalMessage(value: number | undefined): MotivationalMessage {
+  if (value === undefined) return { emoji: "🔃", message: "Loading..." };
   if (value >= 50) {
     return { emoji: "😔", message: "It’s getting worse" };
   } else if (value >= 10) {

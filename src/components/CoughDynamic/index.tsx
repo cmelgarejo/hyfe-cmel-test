@@ -1,7 +1,7 @@
 import SeesawChart from "@/components/SeesawChart";
 import MotivationalMessage from "../MotivationalMessage";
 
-export default function CoughDynamic({ value }) {
+export default function CoughDynamic({ value }: { value: number | undefined }) {
   return (
     <div className="p-4 w-screen">
       <div className="flex flex-row justify-between rounded-lg shadow-lg bg-white">
@@ -26,7 +26,10 @@ export default function CoughDynamic({ value }) {
   );
 }
 
-export function getHighlightColor(type: "text" | "chart", value: number): string {
+export function getHighlightColor(type: "text" | "chart", value: number | undefined): string {
+  if (value === undefined) {
+    return `--${type}-about-the-same`;
+  }
   if (value >= 50) {
     return `--${type}-getting-worse`;
   } else if (value >= 10) {

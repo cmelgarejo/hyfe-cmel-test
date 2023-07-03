@@ -2,7 +2,7 @@ import { format, startOfDay, subDays, subHours } from "date-fns";
 import { EventsService, Event } from "@/generated/openapi-client";
 
 function sumCoughs(cur: number, acc: Event) {
-  return cur + acc.coughs;
+  return cur + (acc.coughs ?? 0);
 }
 
 // fetchCoughData gets the cough data from the server and calculates the cough percentage
