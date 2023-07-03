@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <nav className="text-gray-200 bg-[#243966] w-full">
+    <nav className="text-gray-200 bg-[var(--bg-nav-header)] w-full">
       <div className="bg-blue-500 bg-opacity-20 h-24 grid grid-flow-col grid-cols-3 justify-between items-center">
         <button
           className="border-0 bg-transparent px-4 leading-none transition-shadow duration-150 ease-in-out

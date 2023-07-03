@@ -16,7 +16,9 @@
   --chart-about-the-same: #A1AFC6;
   --chart-somewhat-better: #91CDEF;
   --chart-much-better: #9FEAB8;
-  --chart-bg: #F7F7F9
+  --chart-bg: #F7F7F9;
+  --motivational-text-bg: #F1F1F3;
+  --bg-nav-header: #243966;
 }
 
 @media (prefers-color-scheme: light) {

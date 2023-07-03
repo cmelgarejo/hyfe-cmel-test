@@ -52,7 +52,7 @@ export function getHighlightColor(type: "text" | "chart", value: number) {
 
 export function getMotivationalMessage(value: number) {
   if (value >= 50) {
-    return "😔 It’s getting worse";
+    return "😔\tIt’s getting worse";
   } else if (value >= 10) {
     return "😔 Somewhat worse";
   } else if (value >= -10) {
@@ -60,6 +60,6 @@ export function getMotivationalMessage(value: number) {
   } else if (value >= -50) {
     return "🙂 Somewhat better";
   } else {
-    return "😃 Much better";
+    return "😃\tMuch better";
   }
 }

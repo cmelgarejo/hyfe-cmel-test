@@ -4,6 +4,22 @@ This project is a Next.js application that includes a Chart component with a RES
 the openapi-typescript-codegen library. The chart visualizes a value on a seesaw-like graph, and the application
 fetches data from the REST API to populate the chart dynamically.
 
+## To enhance the testing experience
+
+Change in `lib/utils.ts` line 15:
+
+```ts
+const oneWeekAgo = format(startOfDay(subDays(new Date(), 7)), "yyyy-MM-dd");
+```
+
+to:
+
+```ts
+const oneWeekAgo = format(startOfDay(subDays(new Date(), 1)), "yyyy-MM-dd");
+```
+
+and you will get a more varied cough percentage.
+
 ## Usage
 
 1. Clone the repository and navigate to the project directory.
