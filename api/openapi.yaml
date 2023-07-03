@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: Dummy events api
+  description: Dummy events api
+  version: 1.0.0
+servers:
+  - url: https://us-central1-hyfe-coughwatch.cloudfunctions.net
+paths:
+  /dummy_cough_events:
+    get:
+      tags:
+        - events
+      summary: Get events
+      description: Retrieve a count of cough events associated with a dummy user aggregated by chosen aggregation level within the requested date range
+      parameters:
+        - in: query
+          name: aggregation
+          schema:
+            type: string
+            enum: [hour, day, week, month]
+          required: true
+        - in: query
+          name: from
+          schema:
+            type: string
+            format: date-time
+        - in: query
+          name: to
+          schema:
+            type: string
+            format: date-time
+      operationId: getEvents
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Event"
+        "400":
+          description: Invalid input
+components:
+  schemas:
+    Event:
+      type: object
+      properties:
+        time:
+          type: string
+          format: date-time
+        coughs:
+          type: number
+        seesion_time_s: 
+          type: number

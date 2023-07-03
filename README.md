@@ -1,38 +1,30 @@
 # Hyfe test app
 
-## Original create-react-app README follows...
+This project is a Next.js application that includes a Chart component with a REST API endpoint using
+the openapi-typescript-codegen library. The chart visualizes a value on a seesaw-like graph, and the application
+fetches data from the REST API to populate the chart dynamically.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Usage
 
-## Getting Started
+1. Clone the repository and navigate to the project directory.
+2. Install the dependencies by running the following command: `yarn install`
+3. (optional) Generate the API client using the openapi-typescript-codegen library: `yarn generate`
+4. Start the development server `yarn dev`
+5. Open your browser and visit <http://localhost:3000> to see the page in action.
 
-First, run the development server:
+## Configuration
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+The project includes an `api/openapi.yaml` file that represents the OpenAPI specification for your REST API.
+Modify this file to match the endpoint and data structure of your API.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The generated API client is located in the `src/generated/openapi-client` directory. Use this client to make
+requests to your REST API from within the Next.js application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Credits
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The Chart component is built using the Recharts library. You can find more information and documentation
+about Recharts at [https://recharts.org](https://recharts.org).
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The openapi-typescript-codegen library is used for generating the API client based on the OpenAPI specification.
+You can find more information and documentation about openapi-typescript-codegen at
+[https://github.com/ferdikoomen/openapi-typescript-codegen](https://github.com/ferdikoomen/openapi-typescript-codegen).

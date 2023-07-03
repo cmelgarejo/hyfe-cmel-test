@@ -3,12 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: #e5e5e5;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --text-getting-worse: #F08770;
+  --text-somewhat-worse: #FDCD70;
+  --text-about-the-same: #A1AFC6;
+  --text-somewhat-better: #91CDEF;
+  --text-much-better: #66C77B;
+  --chart-getting-worse: #E3655B;
+  --chart-somewhat-worse: #FDCD70;
+  --chart-about-the-same: #A1AFC6;
+  --chart-somewhat-better: #91CDEF;
+  --chart-much-better: #9FEAB8;
+  --chart-bg: #F7F7F9
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -18,10 +29,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.recharts-wrapper .recharts-cartesian-grid-horizontal line:nth-child(3) {
+  stroke-opacity: 1;
 }
