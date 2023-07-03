@@ -5,12 +5,12 @@ export default function CoughDynamic({ value }: { value: number | undefined }) {
   return (
     <div className="p-4 w-screen">
       <div className="flex flex-row justify-between rounded-lg shadow-lg bg-white">
-        <div className="p-4">
+        <div className="p-0 m-4">
           <h1 className="pb-1 text-lg font-bold leading-6 text-zinc-800">Cough Dynamic</h1>
-          <div className="text-xs text-slate-500/90">Last 24h comparing to the previous week</div>
+          <div className="text-xs mb-4 text-slate-500/90">Last 24h comparing to the previous week</div>
           <MotivationalMessage value={value} />
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 mb-4">
           <p
             style={{
               color: `var(${getHighlightColor("text", value)})`,

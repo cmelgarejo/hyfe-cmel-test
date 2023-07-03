@@ -1,7 +1,7 @@
 export default function MotivationalMessage({ value }: { value: number | undefined }) {
   const { emoji, message } = getMotivationalMessage(value);
   return (
-    <div className="pt-1 pb-1 pl-3 pr-3 mt-2 text-xs text-zinc-700 bg-[var(--motivational-text-bg)] rounded-full max-w-fit">
+    <div className="pt-1 pb-1 pl-3 pr-3 text-xs text-zinc-700 bg-[var(--motivational-text-bg)] rounded-full max-w-fit">
       <span className="mr-2">{emoji}</span>
       <span>{message}</span>
     </div>

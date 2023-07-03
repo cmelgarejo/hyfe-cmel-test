@@ -19,6 +19,7 @@
   --chart-bg: #F7F7F9CC;
   --motivational-text-bg: #F1F1F3;
   --bg-nav-header: #243966;
+  --chart-wedge: #D7DBE0;
 }
 
 @media (prefers-color-scheme: light) {
