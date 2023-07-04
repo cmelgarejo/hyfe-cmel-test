@@ -2,8 +2,8 @@ export default function MotivationalMessage({ value }: { value: number | undefin
   const { emoji, message } = getMotivationalMessage(value);
   return (
     <div className="pt-1 pb-1 pl-3 pr-3 text-xs text-zinc-700 bg-[var(--motivational-text-bg)] rounded-full max-w-fit">
-      <span className="mr-2">{emoji}</span>
-      <span>{message}</span>
+      <span className="text-lg mr-2">{emoji}</span>
+      <span className="text-sm">{message}</span>
     </div>
   );
 }
