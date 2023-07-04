@@ -15,7 +15,7 @@ export default function CoughDynamic({ value }: { value: number | undefined }) {
             style={{
               color: `var(${getHighlightColor("text", value)})`,
             }}
-            className="text-3xl text-bold text-right mt-2 mr-4 mb-2"
+            className="text-2xl font-bold text-right mt-2 mr-4 mb-2"
           >{`${value ?? "--"}%`}</p>
           <div className="mr-4">
             <SeesawChart value={value} highlightColor={`var(${getHighlightColor("chart", value)})`} />
